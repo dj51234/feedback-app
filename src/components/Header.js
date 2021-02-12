@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-function Header({ logo }) {
+function Header({ logo, bgColor, textColor }) {
   return (
-    <header>
+    <header style={{ backgroundColor: bgColor, color: textColor }}>
       <div className="container">
         <h2>{logo}</h2>
       </div>
@@ -10,8 +10,16 @@ function Header({ logo }) {
   );
 }
 
-Header.PropTypes = {
+Header.defaultProps = {
+  logo: "Feedback App",
+  bgColor: "rgba(0,0,0,0.4)",
+  textColor: "#ff6a95",
+};
+
+Header.propTypes = {
   logo: PropTypes.string,
+  bgColor: PropTypes.string,
+  textColor: PropTypes.string,
 };
 
 export default Header;
