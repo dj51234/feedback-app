@@ -1,14 +1,8 @@
-import { useState } from "react";
-
-function FeedbackItem() {
-  const [ratingScore, setRatingScore] = useState(7);
-  const [ratingText, setRatingText] = useState(
-    "This will be a feedback text for rating"
-  );
+function FeedbackItem({ item }) {
   return (
     <div className="card">
-      <div className="card__num">{ratingScore}</div>
-      <div className="card__text">{ratingText}</div>
+      <div className="card__num">{item.rating}</div>
+      <div className="card__text">{item.text}</div>
     </div>
   );
 }
