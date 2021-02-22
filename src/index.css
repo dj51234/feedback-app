@@ -130,7 +130,7 @@ input:focus {
   left: -10px;
 }
 
-.close,
+.remove,
 .edit {
   position: absolute;
   top: 10px;
