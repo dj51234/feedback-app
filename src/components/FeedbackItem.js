@@ -3,13 +3,13 @@ import { PropTypes } from "prop-types";
 import { FaTimes } from "react-icons/fa";
 import { FeedbackList } from "./FeedbackList";
 
-function FeedbackItem({ item, reverse, removeClick }) {
+function FeedbackItem({ item, reverse, removeFeedbackItem }) {
   return (
     <Card>
       <div className="card__num">{item.rating}</div>
       <button className="remove">
         <FaTimes
-          onClick={() => removeClick(item.id)}
+          onClick={() => removeFeedbackItem(item.id)}
           className={reverse ? "white" : "purple"}
         />
       </button>

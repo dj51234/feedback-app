@@ -1,7 +1,7 @@
 import FeedbackItem from "./FeedbackItem";
 import { PropTypes } from "prop-types";
 
-function FeedbackList({ feedback, removeClick }) {
+function FeedbackList({ feedback, removeFeedbackItem }) {
   if (!feedback || feedback.length === 0) {
     return <p>No ratings yet</p>;
   }
@@ -9,7 +9,11 @@ function FeedbackList({ feedback, removeClick }) {
     <div className="feedback-list">
       {feedback.map((item) => {
         return (
-          <FeedbackItem key={item.id} item={item} removeClick={removeClick} />
+          <FeedbackItem
+            key={item.id}
+            item={item}
+            removeFeedbackItem={removeFeedbackItem}
+          />
         );
       })}
     </div>

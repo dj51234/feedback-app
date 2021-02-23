@@ -6,11 +6,12 @@ import FeedbackItem from "./components/FeedbackItem";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
-  const removeClick = (id) => {
+  const removeFeedbackItem = (id) => {
     if (window.confirm("Are you sure?")) {
+      console.log("works");
       setFeedback(
-        feedback.filter((feedbackitem) => {
-          return FeedbackItem.id !== id;
+        feedback.filter((feedbackItem) => {
+          return feedbackItem.id !== id;
         })
       );
     }
@@ -19,7 +20,10 @@ function App() {
     <>
       <Header logo="Feedback App" />
       <div className="container">
-        <FeedbackList feedback={feedback} removeClick={removeClick} />
+        <FeedbackList
+          feedback={feedback}
+          removeFeedbackItem={removeFeedbackItem}
+        />
       </div>
     </>
   );
