@@ -2,23 +2,19 @@ import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import { useState } from "react";
 import FeedbackData from "./data/FeedbackData";
-import FeedbackItem from "./components/FeedbackItem";
+import FeedbackStats from "./components/FeedbackStats";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
   const removeFeedbackItem = (id) => {
     if (window.confirm("Are you sure?")) {
-      console.log("works");
-      setFeedback(
-        feedback.filter((feedbackItem) => {
-          return feedbackItem.id !== id;
-        })
-      );
+      setFeedback(feedback.filter((feedbackItem) => feedbackItem.id !== id));
     }
   };
   return (
     <>
       <Header logo="Feedback App" />
+      <FeedbackStats feedback={feedback} />
       <div className="container">
         <FeedbackList
           feedback={feedback}
