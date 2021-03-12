@@ -160,6 +160,8 @@ input:focus {
 
 .btn-secondary {
   background: #ff6a95;
+  color: #202142;
+  font-weight: 300;
 }
 
 .btn:hover {
