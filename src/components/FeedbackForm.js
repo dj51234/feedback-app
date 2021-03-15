@@ -4,8 +4,29 @@ import Button from "./shared/Button";
 
 function FeedbackForm() {
   const [content, setContent] = useState("");
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  const [warning, setWarning] = useState(
+    "Review must be at least 10 characters long"
+  );
+
   const handleContentChange = (e) => {
+    if (content === "") {
+      setBtnDisabled(true);
+      setContent(null);
+    } else if (content !== "" && content.trim().length < 9) {
+      setWarning(warning);
+    } else {
+      setBtnDisabled(false);
+      setWarning("");
+    }
     setContent(e.target.value);
+    // if (content === "") {
+    //   setBtnDisabled(true);
+    // } else if (content.trim().length > 0 && content.trim().length < 10) {
+    //   setWarning(`Must add ${10 - content.trim().length} more characters`);
+    // } else {
+    //   setBtnDisabled(false);
+    // }
   };
   return (
     <Card>
@@ -18,10 +39,15 @@ function FeedbackForm() {
             placeholder="Write your review here"
             value={content}
           />
-          <Button buttonType="submit" classType="secondary">
+          <Button
+            isDisabled={btnDisabled}
+            buttonType="submit"
+            classType="secondary"
+          >
             Submit
           </Button>
         </div>
+        <div>{warning}</div>
       </form>
     </Card>
   );
