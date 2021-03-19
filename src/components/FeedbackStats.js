@@ -10,7 +10,7 @@ function FeedbackStats({ feedback }) {
     <div className="feedback-stats">
       <h4>{feedback.length} Reviews</h4>
       <h4>
-        Average Rating:
+        Average Rating: {` `}
         {!isNaN(ratingSum / feedback.length)
           ? (ratingSum / feedback.length).toFixed(1)
           : 0}

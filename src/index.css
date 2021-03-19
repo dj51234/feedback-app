@@ -117,6 +117,10 @@ input:focus {
   outline: none;
 }
 
+.warning {
+  color: red;
+}
+
 .feedback-stats {
   color: #fff;
   display: flex;

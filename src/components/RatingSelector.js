@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-function RatingSelector({ rating }) {
+function RatingSelector({ select }) {
   const [selected, setSelected] = useState(10);
 
   const handleRatingChange = (e) => {
     setSelected(+e.currentTarget.value);
-    setSelected(+e.currentTarget.value);
+    select(+e.currentTarget.value);
   };
   return (
     <ul className="rating">
