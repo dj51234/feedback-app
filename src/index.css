@@ -8,13 +8,14 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #202142;
+  background-color: #2f5166;
   color: #fff;
   line-height: 1.6;
 }
 
 ul {
   list-style: none;
+  color: #2f5166;
 }
 
 .container {
@@ -86,7 +87,7 @@ header {
 
 .rating li:hover,
 .card__num {
-  background: #ff6a95;
+  background: #fe7f2d;
   color: #fff;
 }
 
@@ -95,7 +96,7 @@ header {
 }
 
 [type="radio"]:checked ~ label {
-  background: #ff6a95;
+  background: #fe7f2d;
   color: #fff;
 }
 
@@ -142,6 +143,13 @@ input:focus {
   cursor: pointer;
   background: none;
   border: none;
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+}
+
+.remove:hover,
+.edit:hover {
+  opacity: 1;
 }
 
 .edit {
@@ -163,8 +171,8 @@ input:focus {
 }
 
 .btn-secondary {
-  background: #ff6a95;
-  color: #202142;
+  background: #fe7f2d;
+  color: #233d4d;
   font-weight: 300;
 }
 
@@ -203,7 +211,7 @@ input:focus {
 }
 
 .about-link a:hover {
-  color: #ff6a95;
+  color: #fe7f2d;
 }
 
 .about h1 {
@@ -212,6 +220,12 @@ input:focus {
 
 .about p {
   margin: 10px 0;
+}
+
+.spinning {
+  width: 150px;
+  display: block;
+  margin: 75px auto;
 }
 
 @media (max-width: 600px) {
