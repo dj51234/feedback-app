@@ -10,13 +10,13 @@ function FeedbackItem({ item, reverse }) {
       <div className="card__num">{item.rating}</div>
       <button className="remove">
         <FaTimes
-          color="#222"
+          color="purple"
           onClick={() => removeFeedbackItem(item.id)}
-          className={reverse ? "white" : "#222"}
+          className={reverse ? "white" : "purple"}
         />
       </button>
       <button onClick={() => editFeedback(item)} className="edit">
-        <FaEdit color="#222" />
+        <FaEdit color="purple" />
       </button>
       <div className="card__text">{item.text}</div>
     </Card>
